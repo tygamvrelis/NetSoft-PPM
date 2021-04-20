@@ -1,2 +1,2 @@
-# NetSoft-PPM
-Prototyping a posted-price mechanism for online combinatorial auctions
+# PPM
+Posted-price mechanism for online combinatorial auctions.

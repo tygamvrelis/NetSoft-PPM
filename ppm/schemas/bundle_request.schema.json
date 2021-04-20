@@ -1,0 +1,81 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "customer_id": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "bundle": {
+            "type": "object",
+            "properties": {
+                "payment": {
+                    "type": "number",
+                    "minimum": 0
+                },
+                "duration": {
+                    "type": "number",
+                    "minimum": 0
+                },
+                "zones": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "zone_id": {
+                                "type": "integer",
+                                "minimum": 0
+                            },
+                            "resources": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "res_type": { "type": "string" },
+                                        "qty": {
+                                            "type": "integer",
+                                            "minimum": 0
+                                        }
+                                    },
+                                    "required": ["res_type", "qty"],
+                                    "additionalProperties": false
+                                }
+                            }
+                        },
+                        "required": ["zone_id", "resources"],
+                        "additionalProperties": false
+                    }
+                },
+                "links": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "src_zone_id": {
+                                "type": "integer",
+                                "minimum": 0
+                            },
+                            "dst_zone_id": {
+                                "type": "integer",
+                                "minimum": 0
+                            },
+                            "qty": {
+                                "type": "integer",
+                                "minimum": 0
+                            }
+                        },
+                        "required": ["src_zone_id", "dst_zone_id", "qty"],
+                        "additionalProperties": false
+                    }
+                },
+                "price_token": { "type": "integer" }
+            },
+            "required": ["payment", "duration", "zones", "links"],
+            "additionalProperties": false
+        }
+    },
+    "required": ["customer_id", "bundle"],
+    "additionalProperties": false
+}

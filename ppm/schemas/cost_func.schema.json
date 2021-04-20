@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "oneOf": [
+        {
+            "type" : "object",
+            "properties" : {
+                "func" : {
+                    "type" : "string",
+                    "enum" : ["PowerFunc"]
+                },
+                "a" : {
+                    "type" : "number",
+                    "exclusiveMinimum": 0
+                },
+                "s" : {
+                    "type" : "number",
+                    "exclusiveMinimum": 1
+                }
+            }
+        }
+    ]
+}

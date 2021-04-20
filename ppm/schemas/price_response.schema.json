@@ -1,0 +1,70 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "zones": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "zone_id": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "resources": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "res_type": { "type": "string" },
+                                "price": {
+                                    "type": "number",
+                                    "minimum": 0
+                                },
+                                "pbar" : {
+                                    "type": "number",
+                                    "minimum": 0
+                                }
+                            },
+                            "required": ["res_type", "price"],
+                            "additionalProperties": false
+                        }
+                    }
+                },
+                "required": ["zone_id", "resources"],
+                "additionalProperties": false
+            }
+        },
+        "links": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "src_zone_id": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "dst_zone_id": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "price": {
+                        "type": "number",
+                        "minimum": 0
+                    },
+                    "pbar" : {
+                        "type": "number",
+                        "minimum": 0
+                    }
+                },
+                "required": ["src_zone_id", "dst_zone_id", "price"],
+                "additionalProperties": false
+            }
+        },
+        "price_token": { "type": "integer" }
+    },
+    "required": ["zones", "links"],
+    "additionalProperties": false
+}

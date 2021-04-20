@@ -1,0 +1,12 @@
+{
+   "zones":[],
+   "links":[
+      {
+         "src_zone_id":1,
+         "dst_zone_id":2,
+         "qty":1
+      }
+   ],
+   "payment":1,
+   "duration":1
+}

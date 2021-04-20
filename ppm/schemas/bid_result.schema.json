@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "success": { "type": "boolean" },
+        "bid_id": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "msg": { "type": "string" }
+    },
+    "required": ["success", "bid_id"],
+    "additionalProperties": false
+}

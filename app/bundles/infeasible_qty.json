@@ -1,0 +1,16 @@
+{
+   "zones":[
+      {
+         "zone_id":2,
+         "resources":[
+            {
+               "res_type":"CPU",
+               "qty":5000
+            }
+         ]
+      }
+   ],
+   "links":[],
+   "payment":0,
+   "duration":10
+}

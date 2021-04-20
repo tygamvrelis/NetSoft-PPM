@@ -1,0 +1,16 @@
+{
+   "zones":[
+      {
+         "zone_id":1,
+         "resources":[
+            {
+               "res_type":"GPU",
+               "qty":10
+            }
+         ]
+      }
+   ],
+   "links":[],
+   "payment":0,
+   "duration":10
+}
